@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-family: 'open Sans', 'sans-serif';
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
+  pointer-events: none;
+}
+
+.App-logo-custom {
+  height: 150px;
   pointer-events: none;
 }
 
@@ -28,6 +44,19 @@
   color: #61dafb;
 }
 
+
+.App-main-view {
+  height : 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-left : 50px;
+  padding-right : 50px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +64,155 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hbox{
+  display: flex;
+  flex-direction: row;
+}
+
+.vbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-content-center {
+ justify-content: center;
+}
+
+.justify-content-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-space-evenly {
+  justify-content: space-evenly;
+}
+
+.align-item-center {
+  justify-content: center;
+}
+
+.align-item-flex-start {
+  align-items: flex-start;
+}
+
+.align-item-flex-end {
+  align-items: flex-end;
+}
+
+.align-item-start {
+  align-items: start;
+}
+
+.align-item-end {
+  align-items: end;
+}
+
+.CompanyAddressCls{
+  list-style-type: none;
+}
+
+.travelTagLineCls {
+  border-top: solid 2px red;
+  margin: 10px 0 70px 70px;
+  padding: 10px;
+}
+
+.taxInvoiceBody {
+  border: dashed 1px grey;
+  width  : 100%;
+}
+.taxInvoiceTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ClientInfoCls {
+  margin: 10px;
+  padding: 10px;
+}
+
+.invoiceDetailInfoCls table{
+  border:dashed 1px grey;
+  padding: 10px;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+}
+.invoiceDetailInfoCls tr{
+  border:dashed 1px grey;
+}
+
+.invoiceDetailInfoCls th{
+  text-align: left;
+  border-right : dashed 1px grey;
+  border-spacing: 10px;
+}
+
+.invoiceDetailInfoCls th:nth-child(7){
+  border-right : none;
+}
+
+.invoiceDetailInfoCls td{
+  text-align: left;
+  border-top : dashed 1px grey;
+  border-spacing: 10px;
+  border-right : dashed 1px grey;
+}
+
+.invoiceDetailInfoCls td:nth-child(7){
+  border-right : none;
+}
+
+
+
+.componyInfo{
+  align-self: flex-end;
+}
+
+.secondaryMobileCls {
+  margin-left: 75px;
+}
+
+.logoCls {
+  margin-left: 75px;
+}
+
+.footerCls {
+  align-self: flex-start;
+  margin: 10px;
+}
+
+.grossTotalCls {
+  padding: 10px;
+  justify-content: end;
+  border-bottom : dashed 1px grey;
+}
+
+.tollParkingAmountCls {
+  padding: 10px;
+  border-bottom : dashed 1px grey;
+}
+
+.invoiceFooterDetails {
+  padding: 10px;
+}
+
+.invoiceFooterDetailsGstInfo {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.signatureSection{
+  width : 200px;
+  align-self: center;
 }

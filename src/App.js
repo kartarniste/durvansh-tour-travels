@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
 
+import PageView from  './component/view/PageView';
+import SectionView from './component/view/SectionView';
+import View from './component/view/View';
+import CompanyInfo from './CustomComponent/invoice/OwnerDetails/CompanyInfo';
+import ClientInfo from './CustomComponent/invoice/ClientDetails/ClientInfo';
+import InvoiceItemInfo from './CustomComponent/invoice/InvoiceItem/InvoiceItemInfo';
+import InvoiceFooterDetails from './CustomComponent/invoice/FooterSection/InvoiceFooterDetails';
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <PageView>
+        <CompanyInfo />
+        <SectionView className='taxInvoiceTitle'><span>Tax Invoice</span></SectionView>
+        <View className='taxInvoiceBody'>
+            <ClientInfo />    
+            <InvoiceItemInfo />
+            <InvoiceFooterDetails />
+        </View>
+        
+        <footer className='footerCls'>
+            <span>( Subject to Nagpur Jurisdiction)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&OE</span>
+        </footer>
+
+        <button onClick={()=>{window.print()}}>Print</button>
+
+      </PageView>
   );
 }
 
