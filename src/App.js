@@ -9,15 +9,18 @@ import InvoiceItemInfo from './CustomComponent/invoice/InvoiceItem/InvoiceItemIn
 import InvoiceFooterDetails from './CustomComponent/invoice/FooterSection/InvoiceFooterDetails';
 
 function App() {
-
+  var invoiceData = localStorage.getItem('invoice');
+  if(invoiceData != null && invoiceData != ''){
+    invoiceData = JSON.parse(invoiceData);
+  }
   return (
       <PageView>
         <CompanyInfo />
-        <SectionView className='taxInvoiceTitle'><span>Tax Invoice</span></SectionView>
+        <SectionView className='taxInvoiceTitle'><span>TAX INVOICE</span></SectionView>
         <View className='taxInvoiceBody'>
-            <ClientInfo />    
-            <InvoiceItemInfo />
-            <InvoiceFooterDetails />
+            <ClientInfo invoiceData={invoiceData}/>    
+            <InvoiceItemInfo invoiceData={invoiceData}/>
+            <InvoiceFooterDetails invoiceData={invoiceData}/>
         </View>
         
         <footer className='footerCls'>

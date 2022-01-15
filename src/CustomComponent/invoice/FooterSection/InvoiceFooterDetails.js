@@ -1,7 +1,7 @@
 import SectionView from "../../../component/view/SectionView";
 import View from "../../../component/view/View";
 
-function InvoiceFooterDetails(){
+function InvoiceFooterDetails({invoiceData}){
     return (
         <View className="vbox invoiceFooterDetails">
 
@@ -11,7 +11,7 @@ function InvoiceFooterDetails(){
 
             <SectionView className="hbox justify-content-space-between invoiceFooterDetailsGstInfo">
                 <View className="vbox"> 
-                    <span>GST NO : -------------------</span>
+                    <span>GST NO : {invoiceData.ownergst}</span>
                 </View>
 
                 <View className="vbox signatureSection"> 
@@ -22,7 +22,7 @@ function InvoiceFooterDetails(){
 
             <SectionView className="hbox">
                 <View className="vbox"> 
-                    <span>whether the tax is payable on Reverse charge Mechanism  : YES</span>
+                    <span>Whether the tax is payable on Reverse charge Mechanism  : {invoiceData.taxCharge}</span>
                 </View>
 
             </SectionView>
