@@ -20,12 +20,12 @@ const style = {
 
 export default function TaxiItemForm(props) {
 
-  const [formValues, setFormValues] = React.useState(props.formValues || {});
-
+  let formValues = {};
+ 
   const addTaxi = (event)=>{
     event.preventDefault();
     const data = {...formValues};
-          data.amount = parseFloat(data.basis) * parseFloat(data.rate);
+          data.amount = data.amount ? parseFloat(data.amount) : parseFloat(data.basis) * parseFloat(data.rate);
 
           props.taxiItemsFn(data);
 
@@ -36,7 +36,7 @@ export default function TaxiItemForm(props) {
     let value = field.target.value;
     let key = field.target.id;
 
-    setFormValues({...formValues, [key] : value});
+    formValues = {...formValues, [key] : value};
   }
 
   return (
@@ -138,6 +138,23 @@ export default function TaxiItemForm(props) {
                     }}
                 />
                 </Grid>
+
+                <Grid item xs={12}>
+                <TextField
+                    required
+                    id="amount"
+                    name="amount"
+                    label="Amount"
+                    fullWidth
+                    autoComplete="amount"
+                    variant="standard"
+                    onChange ={(field)=>{
+                        onTextFieldChange(field);
+                    }}
+                />
+                </Grid>
+
+                
 
                 <Grid item xs={12}  sm={6}>
                     <Button

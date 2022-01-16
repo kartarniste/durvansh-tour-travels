@@ -199,8 +199,8 @@ const handleSubmit=(e)=>{
 
         <Grid item xs={12}>
           <FormControlLabel
-            control={<Checkbox color="secondary" name="taxCharge" value="yes"  onChange ={(field)=>{
-                field.target.value = field.target.value.toUpperCase();
+            control={<Checkbox color="secondary" name="taxCharge" id="taxCharge" value="yes"  onChange ={(field)=>{
+                field.target.value = field.target.checked ? "YES" : "NO";
                         onTextFieldChange(field);
                     }} />}
             label="Whether the tax is payable on reverse charge mechanism"

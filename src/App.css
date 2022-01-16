@@ -160,6 +160,7 @@ body {
 
 .invoiceDetailInfoCls th:nth-child(7){
   border-right : none;
+  text-align: right;
 }
 
 .invoiceDetailInfoCls td{
@@ -171,12 +172,15 @@ body {
 
 .invoiceDetailInfoCls td:nth-child(7){
   border-right : none;
+  text-align: right;
 }
 
 
 
 .componyInfo{
-  align-self: flex-end;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .secondaryMobileCls {

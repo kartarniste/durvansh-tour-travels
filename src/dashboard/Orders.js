@@ -5,47 +5,20 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
+import { Paper, Typography } from '@mui/material';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
   return { id, date, name, shipTo, paymentMethod, amount };
 }
 
-const rows = [
-  createData(
-    0,
-    '16 Mar, 2019',
-    'Elvis Presley',
-    'Tupelo, MS',
-    'VISA ⠀•••• 3719',
-    312.44,
-  ),
-  createData(
-    1,
-    '16 Mar, 2019',
-    'Paul McCartney',
-    'London, UK',
-    'VISA ⠀•••• 2574',
-    866.99,
-  ),
-  createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
-  createData(
-    3,
-    '16 Mar, 2019',
-    'Michael Jackson',
-    'Gary, IN',
-    'AMEX ⠀•••• 2000',
-    654.39,
-  ),
-  createData(
-    4,
-    '15 Mar, 2019',
-    'Bruce Springsteen',
-    'Long Branch, NJ',
-    'VISA ⠀•••• 5919',
-    212.79,
-  ),
-];
+const rows = [];
 
 
 export default function Orders() {
@@ -55,25 +28,50 @@ export default function Orders() {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Bill No</TableCell>
+            <TableCell>Guest Name</TableCell>
+            <TableCell>Party Name</TableCell>
+            <TableCell>Address</TableCell>
+            <TableCell align="right">Total Amount</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{`$${row.amount}`}</TableCell>
+              <TableCell>{row.billNo}</TableCell>
+              <TableCell>{row.guestName}</TableCell>
+              <TableCell>{row.partyName}</TableCell>
+              <TableCell>{row.address}</TableCell>
+              <TableCell align="right">{`Rs {row.amount}`}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
+
+      <Timeline position="alternate">
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot color="secondary" />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Create Invoice</TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot color="success" />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Print Invoice</TimelineContent>
+      </TimelineItem>
+
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot color="secondary" />
+        </TimelineSeparator>
+        <TimelineContent>List - Coming Soon...!!!</TimelineContent>
+      </TimelineItem>
+
+    </Timeline>
     </React.Fragment>
   );
 }

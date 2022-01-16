@@ -1,12 +1,13 @@
 import SectionView from "../../../component/view/SectionView";
 import View from "../../../component/view/View";
 import GSTDetailInfo from "../GSTDetails/GSTDetailInfo";
+import InvoiceTotalInfo from '../InvoiceTotal/InvoiceTotalInfo';
 
 function InvoiceItemInfo({invoiceData}){
 
     const total = (taxiItems) => {
       if(!taxiItems)
-            return "0";
+            return 0;
 
       return taxiItems.reduce(function(result, value){
             result = result + parseFloat(value.amount);
@@ -16,6 +17,10 @@ function InvoiceItemInfo({invoiceData}){
 
     const taxableAmount=()=>{
       return parseFloat(total(invoiceData.taxiItems)) + parseFloat(invoiceData.tollTax);
+    }
+
+    const numberWithCommas = (num) => {
+      return num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
     }
 
     return(
@@ -45,13 +50,13 @@ function InvoiceItemInfo({invoiceData}){
                  }
                 
             </table>  
-            <SectionView className="hbox grossTotalCls"><span>Gross Amount Rs:  {total(invoiceData.taxiItems)}</span></SectionView>
+            <SectionView className="hbox grossTotalCls"><span>Gross Amount Rs:  &nbsp; &nbsp; {numberWithCommas(total(invoiceData.taxiItems))}</span></SectionView>
             <SectionView className="hbox justify-content-space-between tollParkingAmountCls">
                   <View className="vbox">
                         <span>Toll/Parking Amount</span>
                   </View>
                   <View className="vbox">
-                        <span>{invoiceData.tollTax}</span>
+                        <span>{numberWithCommas(invoiceData.tollTax)}</span>
                   </View>
             </SectionView>
 
@@ -60,11 +65,13 @@ function InvoiceItemInfo({invoiceData}){
                         <span>Taxable Amount:</span>
                   </View>
                   <View className="vbox">
-                        <span>{taxableAmount()}</span>
+                        <span>{numberWithCommas(taxableAmount())}</span>
                   </View>
             </SectionView>
            
-            <GSTDetailInfo />
+            <GSTDetailInfo invoiceData = {invoiceData}/>
+
+            <InvoiceTotalInfo invoiceData = {invoiceData}/>
         </View>
     );
 }

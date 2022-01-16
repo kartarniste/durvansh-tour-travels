@@ -1,11 +1,16 @@
 import View from "../../../component/view/View";
 import SectionView from "../../../component/view/SectionView";
 import logo  from "../../../image/logo.png";
+import letterPadInfo  from "../../../image/dttravels_letter_pad.png";
+
 
 function CompanyInfo(){
     return(
         <View className="vbox componyInfo">
-            <SectionView className="hbox">
+            <img src={letterPadInfo} className="App-logo-custom" alt="logo" />
+            
+            {
+                /*<SectionView className="hbox">
                   <View className="vbox logoCls">
                     <img src={logo} className="App-logo-custom" alt="logo" />
                     <span>Email: durvanshtours111@gmail.com</span>
@@ -25,7 +30,8 @@ function CompanyInfo(){
 
             <SectionView className="hbox travelTagLineCls">
                 <span>FOR ROUND THE CLOCK EFFICIENT TRAVEL SERVICES</span>
-            </SectionView>
+            </SectionView>*/
+            }
 
         </View>
     );
