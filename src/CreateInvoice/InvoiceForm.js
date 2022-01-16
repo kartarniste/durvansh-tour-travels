@@ -38,6 +38,13 @@ const handleSubmit=(e)=>{
     navigate('/invoice');
 }
 
+const deleteTaxiInfo =(field)=>{
+  let value = field.target.value;
+  let items = formValues.taxiItems || [];
+      items = items.filter(item => item.taxiNo !== value)
+  setFormValues({...formValues, taxiItems : [...items]});
+}
+
   return (
     <Box noValidate sx={{ mt: 1 }}>
       <Grid container spacing={3}>
@@ -195,7 +202,7 @@ const handleSubmit=(e)=>{
 
         <TaxiItemForm open={openTaxiItem} handleClose={handleClose} taxiItemsFn={taxiItemsFn}/>
 
-        <TaxiItems taxiItems = {formValues.taxiItems}/>
+        <TaxiItems deleteTaxiInfo={deleteTaxiInfo} taxiItems = {formValues.taxiItems}/>
 
         <Grid item xs={12}>
           <FormControlLabel

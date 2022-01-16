@@ -22,7 +22,7 @@ function InvoiceFooterDetails({invoiceData}){
 
             <SectionView className="hbox">
                 <View className="vbox"> 
-                    <span>Whether the tax is payable on Reverse charge Mechanism  : {invoiceData.taxCharge}</span>
+                    <span>Whether the tax is payable on Reverse charge Mechanism  : {invoiceData.taxCharge || "NO"}</span>
                 </View>
 
             </SectionView>
