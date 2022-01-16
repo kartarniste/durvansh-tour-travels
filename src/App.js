@@ -16,7 +16,16 @@ function App() {
   return (
       <PageView>
         <CompanyInfo />
-        <SectionView className='taxInvoiceTitle'><span>TAX INVOICE</span></SectionView>
+
+        <SectionView className="hbox justify-content-space-between taxInvoiceTitleCls">
+              <View className="vbox taxInvoiceTitle">
+                    <span>TAX INVOICE</span>
+              </View>
+              <View className="vbox originalRecipientCls">
+                    <span>Original for Recipient</span>
+              </View>
+        </SectionView>
+        
         <View className='taxInvoiceBody'>
             <ClientInfo invoiceData={invoiceData}/>    
             <InvoiceItemInfo invoiceData={invoiceData}/>
@@ -27,7 +36,7 @@ function App() {
             <span>( Subject to Nagpur Jurisdiction)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&OE</span>
         </footer>
 
-        <button onClick={()=>{window.print()}}>Print</button>
+        <button id="printPageButton" onClick={()=>{window.print()}}>Print</button>
 
       </PageView>
   );
