@@ -7,20 +7,18 @@ import letterPadInfo  from "../../../image/dttravels_letter_pad.png";
 function CompanyInfo(){
     return(
         <View className="vbox componyInfo">
-            <img src={letterPadInfo} className="App-logo-custom" alt="logo" />
+            {/*<img src={logo} className="App-logo-custom" alt="logo" />*/}
             
-            {
-                /*<SectionView className="hbox">
+                <SectionView className="hbox">
                   <View className="vbox logoCls">
                     <img src={logo} className="App-logo-custom" alt="logo" />
-                    <span>Email: durvanshtours111@gmail.com</span>
-                  </View>  
-
-                  <View className="vbox">
+                  </View>
+                  <View className="vbox companyAddressMainCls">
                     <ul className="CompanyAddressCls">
-                        <li><span>Add. Kharbi Road</span></li>
+                        <li><span>Plot No. 215 Kharbi Road</span></li>
                         <li><span>Sankalp Nagar</span></li>
                         <li><span>Nagpur-440024</span></li>
+                        <li>Email: durvanshtours111@gmail.com</li>
                         <li><span>Mob. No. 8830834138</span></li>
                         <li><span className="secondaryMobileCls">8412960494</span></li>
                     </ul>
@@ -30,8 +28,8 @@ function CompanyInfo(){
 
             <SectionView className="hbox travelTagLineCls">
                 <span>FOR ROUND THE CLOCK EFFICIENT TRAVEL SERVICES</span>
-            </SectionView>*/
-            }
+            </SectionView>
+        
 
         </View>
     );
