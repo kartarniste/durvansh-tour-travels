@@ -16,14 +16,18 @@ function InvoiceTotalInfo({invoiceData}){
       }
   
       const taxableAmount=()=>{
-        let taxableAmount =  parseFloat(total(invoiceData.taxiItems)) + parseFloat(invoiceData.tollTax);
+        let taxableAmount =  parseFloat(total(invoiceData.taxiItems));
 
-        if(invoiceData.SGST){
-          taxableAmount = taxableAmount + parseFloat(invoiceData.SGST);
+        if(invoiceData.nightHalt){
+          taxableAmount = taxableAmount + parseFloat(invoiceData.nightHalt);
         }
 
-        if(invoiceData.CGST){
-          taxableAmount = taxableAmount + parseFloat(invoiceData.CGST);
+        if(invoiceData.hasGSTBill){
+          taxableAmount = taxableAmount + (taxableAmount* (5/100));
+        }
+
+        if(invoiceData.tollTax){
+          taxableAmount = taxableAmount+ parseFloat(invoiceData.tollTax);
         }
 
         return taxableAmount;
@@ -41,7 +45,7 @@ function InvoiceTotalInfo({invoiceData}){
             </SectionView>
             
             <SectionView className="hbox tollParkingAmountCls">
-                <span> RUPEES : {converter.toWords(taxableAmount()).toUpperCase()}</span>
+                <span className="mediamFontSizeClass"> RUPEES : {converter.toWords(taxableAmount()).toUpperCase()}</span>
             </SectionView> 
         </View>
     );

@@ -53,12 +53,14 @@ function InvoiceItemInfo({invoiceData}){
             <SectionView className="hbox grossTotalCls"><span>Gross Amount Rs:  &nbsp; &nbsp; {numberWithCommas(total(invoiceData.taxiItems))}</span></SectionView>
             <SectionView className="hbox justify-content-space-between tollParkingAmountCls">
                   <View className="vbox">
-                        <span>Toll/Parking Amount</span>
+                        <span>Night Halt</span>
                   </View>
                   <View className="vbox">
-                        <span>{numberWithCommas(invoiceData.tollTax)}</span>
+                        <span>{numberWithCommas(invoiceData.nightHalt)}</span>
                   </View>
             </SectionView>
+           
+            <GSTDetailInfo invoiceData = {invoiceData}/>
 
             <SectionView className="hbox justify-content-space-between tollParkingAmountCls">
                   <View className="vbox">
@@ -68,8 +70,15 @@ function InvoiceItemInfo({invoiceData}){
                         <span>{numberWithCommas(taxableAmount())}</span>
                   </View>
             </SectionView>
-           
-            <GSTDetailInfo invoiceData = {invoiceData}/>
+
+            <SectionView className="hbox justify-content-space-between tollParkingAmountCls">
+                  <View className="vbox">
+                        <span>Toll/Parking Amount</span>
+                  </View>
+                  <View className="vbox">
+                        <span>{numberWithCommas(invoiceData.tollTax)}</span>
+                  </View>
+            </SectionView>
 
             <InvoiceTotalInfo invoiceData = {invoiceData}/>
         </View>

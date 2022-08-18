@@ -135,32 +135,6 @@ const deleteTaxiInfo =(field)=>{
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            id="CGST"
-            name="CGST"
-            label="CGST"
-            fullWidth
-            variant="standard"
-            onChange ={(field)=>{
-                        onTextFieldChange(field);
-                    }}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="SGST"
-            name="SGST"
-            label="SGST"
-            fullWidth
-            autoComplete="SGST"
-            variant="standard"
-            onChange ={(field)=>{
-                        onTextFieldChange(field);
-                    }}
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
             required
             id="tollTax"
             name="tollTax"
@@ -183,6 +157,22 @@ const deleteTaxiInfo =(field)=>{
             label="Owner GSTN"
             fullWidth
             autoComplete="ownergst"
+            variant="standard"
+            onChange ={(field)=>{
+                        onTextFieldChange(field);
+                    }}
+            
+          />
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+          <TextField
+            required
+            id="nightHalt"
+            name="nightHalt"
+            label="Night Halt"
+            fullWidth
+            autoComplete="nightHalt"
             variant="standard"
             onChange ={(field)=>{
                         onTextFieldChange(field);
@@ -213,6 +203,17 @@ const deleteTaxiInfo =(field)=>{
             label="Whether the tax is payable on reverse charge mechanism"
           />
         </Grid>
+
+        <Grid item xs={12}>
+          <FormControlLabel
+            control={<Checkbox color="secondary" name="hasGSTBill" id="hasGSTBill" value="true"  onChange ={(field)=>{
+                field.target.value = field.target.checked ? true : false;
+                        onTextFieldChange(field);
+                    }} />}
+            label="Need to create GST Bill"
+          />
+        </Grid>
+
         <Grid item xs={12}>
             <Button
                 variant="contained"

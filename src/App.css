@@ -7,6 +7,7 @@
 body {
   background-color: #FFFFFF;
   font-family: 'open Sans', 'sans-serif';
+  font-size: 14px;
 }
 
 .App {
@@ -20,7 +21,7 @@ body {
 
 .App-logo-custom {
   height: 150px;
-  width : 300px;
+  width : '100%';
   pointer-events: none;
 }
 
@@ -190,7 +191,6 @@ body {
 
 .componyInfo{
   width: 100%;
-  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -228,7 +228,7 @@ body {
 }
 
 .signatureSection{
-  width : 200px;
+  width : 365px;
   align-self: center;
 }
 
@@ -242,4 +242,8 @@ body {
   width: 100%;
   justify-content: end;
   align-items: end;
+}
+
+.mediamFontSizeClass {
+  font-size: 12px !important;
 }

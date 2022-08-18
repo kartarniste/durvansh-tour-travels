@@ -6,7 +6,7 @@ function InvoiceFooterDetails({invoiceData}){
         <View className="vbox invoiceFooterDetails">
 
             <SectionView className="hbox ">
-                <span>* HOPE YOU HAVE PLEASANT JOURNEY *</span>
+                <span className="mediamFontSizeClass">* HOPE YOU HAVE PLEASANT JOURNEY *</span>
             </SectionView>
 
             <SectionView className="hbox justify-content-space-between invoiceFooterDetailsGstInfo">
@@ -15,14 +15,14 @@ function InvoiceFooterDetails({invoiceData}){
                 </View>
 
                 <View className="vbox signatureSection"> 
-                    <span>FOR - D.T.TRAVELS</span>
+                    <span>FOR - Durvansh Travel And Tourism (OPC) Pvt. Ltd.</span>
                 </View>
               
             </SectionView>
 
             <SectionView className="hbox">
                 <View className="vbox"> 
-                    <span>Whether the tax is payable on Reverse charge Mechanism  : {invoiceData.taxCharge || "NO"}</span>
+                    <span className="mediamFontSizeClass">Whether the tax is payable on Reverse charge Mechanism  : {invoiceData.taxCharge || "NO"}</span>
                 </View>
 
             </SectionView>
