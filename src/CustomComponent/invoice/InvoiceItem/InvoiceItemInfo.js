@@ -16,7 +16,17 @@ function InvoiceItemInfo({invoiceData}){
     }
 
     const taxableAmount=()=>{
-      return parseFloat(total(invoiceData.taxiItems)) + parseFloat(invoiceData.tollTax);
+      let taxableAmount =  parseFloat(total(invoiceData.taxiItems));
+
+      if(invoiceData.nightHalt){
+          taxableAmount = taxableAmount + parseFloat(invoiceData.nightHalt);
+      }
+
+      if(invoiceData.hasGSTBill){
+          taxableAmount = taxableAmount + taxableAmount * (5/100);
+      }
+      
+      return taxableAmount;
     }
 
     const numberWithCommas = (num) => {
