@@ -34,7 +34,11 @@ function InvoiceTotalInfo({invoiceData}){
       }
 
       const numberWithCommas = (num) => {
-        return num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
+         var value =  num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
+         if(!isNaN(parseFloat(value))){
+            value = value.toFixed(2);
+         }
+         return value;
       }
 
     return (
