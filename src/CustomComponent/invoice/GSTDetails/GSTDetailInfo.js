@@ -4,12 +4,11 @@ import View from "../../../component/view/View";
 function GSTDetailInfo({invoiceData}){
 
     const numberWithCommas = (num) => {
-        var value =  num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
-        if(!isNaN(parseFloat(value))){
-             value =  parseFloat(value);
-            value = value.toFixed(2);
-        }
-        return value;
+       if(!isNaN(parseFloat(num))){
+          num =  parseFloat(num);
+          num = num.toFixed(2);
+       }
+       return  num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
     }
 
     const total = (taxiItems) => {
