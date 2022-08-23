@@ -6,6 +6,7 @@ function GSTDetailInfo({invoiceData}){
     const numberWithCommas = (num) => {
         var value =  num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
         if(!isNaN(parseFloat(value))){
+             value =  parseFloat(value);
             value = value.toFixed(2);
         }
         return value;
