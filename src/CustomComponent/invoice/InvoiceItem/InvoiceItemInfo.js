@@ -30,12 +30,11 @@ function InvoiceItemInfo({invoiceData}){
     }
 
     const numberWithCommas = (num) => {
-      var value =  num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
-      if(!isNaN(parseFloat(value))){
-           value =  parseFloat(value);
-          value = value.toFixed(2);
+       if(!isNaN(parseFloat(num))){
+          num =  parseFloat(num);
+          num = num.toFixed(2);
        }
-       return value;
+       return  num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
     }
 
     return(
